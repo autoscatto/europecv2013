@@ -353,6 +353,7 @@
 \newcommand*{\ecvtelephone}[2][]{\def\ecv@mobile{#2}\def\ecv@telephone{#1}}
 \newcommand*{\ecvemail}[1]{\def\ecv@email{#1}}
 \newcommand*{\ecvlinkedin}[1]{\def\ecv@linkedin{#1}}
+\newcommand*{\ecvgithub}[1]{\def\ecv@github{#1}}
 \newcommand*{\ecvhomepage}[1]{\def\ecv@homepage{#1}}
 \newcommand*{\ecvnationality}[1]{\def\ecv@nationality{#1}}
 \newcommand*{\ecvdateofbirth}[1]{\def\ecv@birth{#1}}
@@ -381,6 +382,7 @@
 \ecvtelephone{}
 \ecvemail{}
 \ecvlinkedin{}
+\ecvgithub{}
 \ecvhomepage{}
 \ecvgender{}
 \ecvdateofbirth{}
@@ -396,9 +398,9 @@
 \ifx\@empty\ecv@address\else
 $\begin{array}{@{}l}\includegraphics[width=\ecv@iconwidth]{ic_address}\end{array}$\ecv@address\par\vspace{5pt}
 \fi
-\ifx\@empty\ecv@mobile\else
+\ifx\@empty\ecv@mobile\else 
 $\begin{array}{@{}l}\includegraphics[width=\ecv@iconwidth]{ic_mobile}\end{array}$\ecv@mobile
- \ifx\@empty\ecv@telephone\else\qquad\includegraphics[width=\ecv@iconwidth]{ic_phone_home} \ecv@telephone\fi
+\ifx\@empty\ecv@telephone\else\qquad\includegraphics[width=\ecv@iconwidth]{ic_phone_home} \ecv@telephone\fi
 \par\vspace{5pt}
 \fi
 \ifx\@empty\ecv@email\else
@@ -409,6 +411,9 @@ $\begin{array}{@{}l}\includegraphics[width=\ecv@iconwidth]{ic_url}\end{array}$\e
 \fi
 \ifx\@empty\ecv@linkedin\else
 $\begin{array}{@{}l}\includegraphics[width=\ecv@iconwidth]{ic_linkedin}\end{array}$\ecv@linkedin\par\vspace{10pt}
+\fi
+\ifx\@empty\ecv@github\else
+$\begin{array}{@{}l}\includegraphics[width=\ecv@iconwidth]{ic_github}\end{array}$\href{\ecv@github}{\ecv@github}\par\vspace{10pt}
 \fi
 \ifx\@empty\ecv@gender
 	\ifx\@empty\ecv@birth
